@@ -11,7 +11,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error: string = '';
-  isLoading: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -26,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated) {
-      this.router.navigate(['/news']);
+      this.router.navigate(['/news']); //Redirect to news if user is already logged in
     }
   }
 

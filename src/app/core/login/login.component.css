@@ -6,11 +6,6 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-button {
-  margin: 20px auto;
-  display: block;
-}
-
 h1 {
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(204, 213, 174, 1);
