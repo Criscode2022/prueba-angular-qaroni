@@ -40,10 +40,6 @@ mat-toolbar-row {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.example-sidenav-content {
-  height: max-content;
-}
-
 .example-sidenav {
   padding: 10px;
   background-color: #e24f2a;
@@ -59,12 +55,6 @@ mat-toolbar-row {
 @media (max-width: 560px) {
   #closeD {
     display: none;
-  }
-
-  button:nth-child(2) {
-    position: absolute;
-    right: 0px;
-    top: 10px;
   }
 
   @media (max-width: 375px) {
