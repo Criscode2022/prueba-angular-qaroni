@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { Person } from 'src/main';
 
 @Component({
   selector: 'app-people',
@@ -8,10 +9,10 @@ import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 })
 export class PeopleComponent {
   peopleForm!: FormGroup;
-  latestData: any;
+  latestData!: Person;
   error: string = '';
   isLoading: boolean = false;
-  personData: any;
+  personData: Person[] = [];
 
   constructor(private fb: FormBuilder) {}
 

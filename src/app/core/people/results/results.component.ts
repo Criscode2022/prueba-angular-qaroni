@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Person } from 'src/main';
 
 @Component({
   selector: 'app-results',
@@ -6,7 +7,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent {
-  @Input() personData: any[] = [];
+  @Input() personData: Person[] = [];
 
   ngOnInit(): void {}
 }
