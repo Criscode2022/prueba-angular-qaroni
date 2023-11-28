@@ -1,0 +1,15 @@
+<h2 class="text-center p-8">Grupos</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 m-4">
+  <div class="group relative" *ngFor="let group of groups">
+    <h2 class="text-center">{{ group.name }}</h2>
+    <button
+      class="absolute bottom-2 right-2"
+      mat-flat-button
+      color="primary"
+      (click)="viewDetails(group.groupId)"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

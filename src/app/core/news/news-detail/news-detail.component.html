@@ -1,0 +1,25 @@
+<div *ngIf="isLoading" class="flex justify-center items-center h-screen">
+  <mat-spinner></mat-spinner>
+</div>
+
+<button
+  class="m-8"
+  mat-icon-button
+  aria-label="Button to return to the news list"
+  routerLink="/news"
+>
+  <mat-icon
+    ><span class="material-symbols-outlined"> arrow_back </span></mat-icon
+  >
+</button>
+
+<div class="p-8">
+  <h2>{{ newsDetail.title }}</h2>
+  <div *ngIf="!isLoading && newsDetail">
+    <div [innerHTML]="newsDetail.largeDescription"></div>
+  </div>
+
+  <div *ngIf="error">
+    {{ error }}
+  </div>
+</div>

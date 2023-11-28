@@ -1,0 +1,15 @@
+form {
+  margin: 60px auto;
+  background-color: #f4a36167;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 425px) {
+  form {
+    width: 150px auto;
+    margin: 0px;
+    padding: 20px;
+  }
+}

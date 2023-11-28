@@ -1,0 +1,42 @@
+<ng-container *ngIf="authenticated">
+  <button id="closeD" mat-raised-button color="primary" (click)="logout()">
+    Cerrar sesión
+  </button>
+</ng-container>
+
+<ng-container *ngIf="authenticated">
+  <button id="closeM" mat-mini-fab color="primary" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</ng-container>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>
+      <button mat-button routerLink="news">Noticias</button>
+    </p>
+
+    <p>
+      <button mat-button routerLink="groups">Grupos</button>
+    </p>
+
+    <p>
+      <button mat-button routerLink="people">Personas</button>
+    </p>
+
+    <p id="btnCloseNav">
+      <button (click)="logout()">Cerrar sesión</button>
+    </p>
+  </mat-drawer>
+
+  <mat-toolbar>
+    <mat-toolbar-row
+      ><span routerLink="/">Prueba de selección Qaroní</span></mat-toolbar-row
+    >
+    <mat-toolbar-row>Cristian Damil García</mat-toolbar-row>
+  </mat-toolbar>
+
+  <button type="button" mat-button (click)="drawer.toggle()">
+    <mat-icon> menu </mat-icon>
+  </button>
+</mat-drawer-container>

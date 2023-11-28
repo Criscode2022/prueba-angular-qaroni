@@ -1,0 +1,11 @@
+<h2>Personas guardadas en LocalStorage:</h2>
+
+<ol class="flex flex-wrap">
+  <li
+    class="bg-gray-200 rounded-xl shadow m-4 p-4 w-fit hover:bg-gray-300"
+    *ngFor="let person of personData; let i = index"
+  >
+    <strong>Persona {{ i + 1 }}:</strong>
+    <pre>{{ person | json }}</pre>
+  </li>
+</ol>

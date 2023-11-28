@@ -1,0 +1,31 @@
+<div *ngIf="isLoading" class="flex justify-center items-center h-screen">
+  <mat-spinner></mat-spinner>
+</div>
+
+<h2 class="text-center p-8">Noticias</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 m-4">
+  <div *ngFor="let new of news" class="hover:shadow-2xl">
+    <mat-card class="example-card shadow-lg">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ new.title }}</mat-card-title>
+          <mat-card-subtitle
+            [innerHTML]="new.shortDescription"
+          ></mat-card-subtitle>
+          <img mat-card-lg-image [src]="new.imageUrl" />
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <button
+          class="mt-8 mb-8"
+          mat-flat-button
+          color="primary"
+          (click)="viewDetails(new.newId)"
+        >
+          Ver más
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

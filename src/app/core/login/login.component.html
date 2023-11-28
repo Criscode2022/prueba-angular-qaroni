@@ -1,0 +1,51 @@
+<h1 class="text-center p-10">Iniciar sesión</h1>
+
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onLogin()"
+  class="flex flex-col gap-4 w-full max-w-lg"
+>
+  <div class="underline w-full">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Usuario</mat-label>
+      <input
+        matInput
+        formControlName="username"
+        aria-label="Usuario"
+        class="text-lg"
+      />
+      <mat-error *ngIf="loginForm.get('username')?.invalid">
+        Introduce un usuario válido
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="underline w-full">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        aria-label="Contraseña"
+        class="text-lg"
+      />
+      <mat-error *ngIf="loginForm.get('password')?.invalid">
+        La contraseña no puede estar vacía
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="loginForm.invalid || isLoading"
+    class="w-full py-2 text-lg"
+  >
+    Iniciar Sesión
+  </button>
+
+  <mat-error *ngIf="error" class="text-lg"
+    >Usuario o contraseña incorrectos</mat-error
+  >
+</form>

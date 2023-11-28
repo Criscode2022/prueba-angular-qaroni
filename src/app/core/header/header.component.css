@@ -1,0 +1,83 @@
+mat-toolbar {
+  background-color: #e76f51;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+span {
+  cursor: pointer;
+}
+
+button {
+  color: white !important;
+}
+
+#closeD {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 100;
+}
+
+button:nth-child(2) {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: fit-content;
+}
+
+mat-toolbar-row {
+  display: flex;
+  justify-content: center;
+}
+
+.example-container {
+  width: 100%;
+  height: 180px;
+  background-color: #e76f51;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  height: max-content;
+}
+
+.example-sidenav {
+  padding: 10px;
+  background-color: #e24f2a;
+  overflow: hidden;
+}
+
+#closeM {
+  position: fixed;
+  top: 0;
+  right: 10px;
+}
+
+@media (min-width: 561px) {
+  #btnCloseNav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  #closeD {
+    display: none;
+  }
+
+  button:nth-child(2) {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
+
+  @media (max-width: 375px) {
+    button:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

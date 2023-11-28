@@ -1,0 +1,131 @@
+<form
+  [formGroup]="peopleForm"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col gap-4 w-full max-w-lg"
+>
+  <!-- Datos de la persona -->
+  <div class="underline w-full">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        aria-label="Nombre"
+        class="text-lg"
+      />
+      <mat-error *ngIf="peopleForm.get('name')?.invalid"
+        >El nombre es requerido</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="underline w-full">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Edad</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="age"
+        aria-label="Edad"
+        class="text-lg"
+      />
+      <mat-error *ngIf="peopleForm.get('age')?.invalid"
+        >La edad es requerida</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <!-- Datos de los hijos -->
+  <div formArrayName="children" class="flex flex-col gap-2">
+    <div
+      *ngFor="let child of children.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Nombre del Hijo {{ i + 1 }}</mat-label>
+        <input matInput formControlName="name" aria-label="Nombre del Hijo" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Edad del Hijo {{ i + 1 }}</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="age"
+          aria-label="Edad del Hijo"
+        />
+      </mat-form-field>
+    </div>
+    <button mat-button (click)="addChild()">Agregar hijo menor de edad</button>
+  </div>
+
+  <!-- Datos de las películas-->
+  <div formArrayName="favoriteMovies" class="flex flex-col gap-2">
+    <div
+      *ngFor="let movie of favoriteMovies.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Nombre de la Película {{ i + 1 }}</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          aria-label="Nombre de la Película"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Director de la Película {{ i + 1 }}</mat-label>
+        <input
+          matInput
+          formControlName="director"
+          aria-label="Director de la Película"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Año de la Película {{ i + 1 }}</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="year"
+          aria-label="Año de la Película"
+        />
+      </mat-form-field>
+
+      <mat-checkbox formControlName="wonOscar">Ganó el Oscar</mat-checkbox>
+    </div>
+    <button mat-button (click)="addMovie()">Agregar película</button>
+  </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="peopleForm.invalid"
+    class="w-full py-2 text-lg"
+  >
+    Enviar
+  </button>
+</form>
+
+<div *ngIf="latestData">
+  <h2>Datos de la última persona guardada</h2>
+  <p><strong>Nombre:</strong> {{ latestData.name }}</p>
+  <p><strong>Edad:</strong> {{ latestData.age }}</p>
+
+  <div *ngFor="let child of latestData.children">
+    <strong>Hijos:</strong>
+    <p><strong>Nombre:</strong> {{ child.name }}</p>
+    <p><strong>Edad:</strong> {{ child.age }}</p>
+  </div>
+
+  <div *ngFor="let movie of latestData.favoriteMovies">
+    <strong>Películas Favoritas:</strong>
+    <p><strong>Nombre:</strong> {{ movie.name }}</p>
+    <p><strong>Director:</strong> {{ movie.director }}</p>
+    <p><strong>Año:</strong> {{ movie.year }}</p>
+    <p><strong>Ganó el Oscar:</strong> {{ movie.wonOscar ? "Sí" : "No" }}</p>
+  </div>
+</div>
+
+<app-results [personData]="personData"></app-results>

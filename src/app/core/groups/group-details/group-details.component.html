@@ -1,0 +1,23 @@
+<button
+  class="m-8"
+  mat-icon-button
+  aria-label="Button to return to the news list"
+  routerLink="/groups"
+>
+  <mat-icon
+    ><span class="material-symbols-outlined"> arrow_back </span></mat-icon
+  >
+</button>
+
+<h2 class="text-center p-8">Detalles del grupo</h2>
+
+<div class="p-8">
+  <h2>{{ groupDetail.title }}</h2>
+  <div *ngIf="groupDetail">
+    <div [innerHTML]="groupDetail.description"></div>
+  </div>
+
+  <div *ngIf="error">
+    {{ error }}
+  </div>
+</div>

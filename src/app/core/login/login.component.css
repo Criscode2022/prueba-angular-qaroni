@@ -1,0 +1,24 @@
+form {
+  margin: 40px auto;
+  background-color: #f4a36167;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  margin: 20px auto;
+  display: block;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(204, 213, 174, 1);
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
