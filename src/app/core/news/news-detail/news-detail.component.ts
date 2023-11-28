@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 export class NewsDetailComponent implements OnInit {
   newsDetail: any;
   isLoading = false;
-  error: string | null = null;
+  error: string = '';
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
