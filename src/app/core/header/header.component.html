@@ -4,12 +4,6 @@
   </button>
 </ng-container>
 
-<ng-container *ngIf="authenticated">
-  <button id="closeM" mat-mini-fab color="primary" (click)="logout()">
-    <mat-icon>exit_to_app</mat-icon>
-  </button>
-</ng-container>
-
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p>

@@ -50,12 +50,6 @@ mat-toolbar-row {
   overflow: hidden;
 }
 
-#closeM {
-  position: fixed;
-  top: 0;
-  right: 10px;
-}
-
 @media (min-width: 561px) {
   #btnCloseNav {
     display: none;

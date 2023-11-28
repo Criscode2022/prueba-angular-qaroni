@@ -66,6 +66,8 @@ export class PeopleComponent {
 
       this.latestData = this.peopleForm.value;
 
+      this.personData = JSON.parse(localStorage.getItem('personData') || '[]');
+
       //Reset the form after submit
 
       this.peopleForm.reset();
