@@ -18,8 +18,8 @@
       <button mat-button routerLink="people">Personas</button>
     </p>
 
-    <p id="btnCloseNav">
-      <button (click)="logout()">Cerrar sesión</button>
+    <p *ngIf="authenticated" id="btnCloseNav">
+      <button mat-button (click)="logout()">Cerrar sesión</button>
     </p>
   </mat-drawer>
 
