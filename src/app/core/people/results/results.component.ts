@@ -8,9 +8,5 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 export class ResultsComponent {
   @Input() personData: any[] = [];
 
-  personColumns: string[] = ['name', 'age'];
-  childrenColumns: string[] = ['name', 'age'];
-  moviesColumns: string[] = ['name', 'director', 'year', 'wonOscar'];
-
   ngOnInit(): void {}
 }
